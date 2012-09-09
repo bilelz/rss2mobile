@@ -1,0 +1,184 @@
+.ui-li-thumb, .ui-listview .ui-li-icon {
+	max-height: none;
+	max-width: 120px;
+	height: auto;
+}
+
+.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb {
+	padding-left: 130px;
+}
+
+.ui-li-heading {
+	white-space: normal;
+}
+
+.ui-li-has-arrow.ui-li-has-count .ui-li-count {
+	background: url(comment_empty.png) no-repeat center center;
+	background-size: 32px;
+	height: 32px;
+	width: 32px;
+	padding: 0;
+	line-height: 32px;
+	text-align: center;
+	border: none;
+}
+
+.pages img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* iscroll */
+
+#wrapper {
+	width: 300px;
+	width: 100%;
+	height: 160px;//
+	float: left;//
+	position: relative;	/* On older OS versions "position" and "z-index" must be defined, */
+	z-index: 1;	/* it seems that recent webkit is less picky and works anyway. */
+	overflow: hidden;
+	margin: 0 0 25px 0;
+	background: #aaa;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	background: #e3e3e3;
+}
+
+#scroller {
+	width: 2100px;
+	width: 700%;
+	height: 100%;
+	float: left;
+	padding: 0;
+}
+
+#scroller ul {
+	list-style: none;
+	display: block;
+	float: left;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+}
+
+#scroller li {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	width: 300px;
+	width: 14.29%;
+	height: 160px;
+	text-align: center;
+	font-family: georgia;
+	font-size: 18px;
+	line-height: 140%;
+}
+
+#nav {
+	width: 300px;
+	width: 100%;
+	float: left;
+	margin-top: -56px;
+	z-index: 5;
+	position: relative;
+}
+
+#prev, #next {
+	float: left;
+	/*font-weight: bold;
+	font-size: 14px;
+	padding: 5px 0;
+	width: 80px;*/
+}
+
+#next {
+	float: right;
+	text-align: right;
+}
+
+#indicator, #indicator > li {
+	display: block;
+	float: left;
+	display: inline-block;
+	float: none;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#indicator {
+	width: 110px;
+	width: auto;
+	padding: 12px 0 0 30px;
+}
+
+#indicator > li {
+	text-indent: -9999em;
+	width: 8px;
+	height: 8px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	background: #ddd;
+	overflow: hidden;
+	margin-right: 4px;
+	border: 1px solid #888;
+}
+
+#indicator > li.active {
+	background: #888;
+}
+
+#indicator > li:last-child {
+	margin: 0;
+}
+
+#caroussel li {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#caroussel img {
+	position: absolute;
+	width: 14.29%;
+	height: auto;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+
+#scroller .overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: red;
+	background-image: -webkit-gradient(linear,left top,right bottom,from(#DC4225),to(#E0BE00));
+	background-image: -webkit-linear-gradient(left top,#DC4225,#E0BE00);
+	background-image: -moz-linear-gradient(left top,#DC4225,#E0BE00);
+	background-image: -ms-linear-gradient(left top,#DC4225,#E0BE00);
+	background-image: -o-linear-gradient(left top,#DC4225,#E0BE00);
+	background-image: linear-gradient(to bottom right,#AAA,#E0BE00);
+	opacity: 0.5;
+	z-index: 1;
+}
+
+#caroussel a, #caroussel h4 {
+	position: relative;
+	z-index: 2;
+	color: white;
+	text-shadow: 1px 1px 1px black;
+	text-decoration: none;
+}
+

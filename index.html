@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Rss4Mobile</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+		<link rel="stylesheet" href="main.css" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+		<script src="mustache.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<div data-role="page" id="home">
+
+			<div data-role="header">
+				<h1>Rss4Mobile</h1>
+			</div><!-- /header -->
+
+			<div data-role="content">
+				
+	
+				
+				<!-- iscroll caroussel -->
+				
+				<div id="wrapper">
+					<div id="scroller">
+						<div class="overlay"></div>
+						<ul id="caroussel" data-role="none"></ul>
+					</div>
+				</div>
+				
+				<script id="caroussel-tmpl" type="text/x-jquery-tmpl">
+					{{#entries}}
+					
+					{{#incaroussel}}
+					
+					<li					
+						 {{#mediaGroups}}
+							{{#contents}}
+								style="background-image: url({{& url}});"
+							{{/contents}}
+							{{/mediaGroups}}
+					>
+						
+						
+						
+						<a href="#i{{index}}" data-transition="slide">
+							<h4>{{title}}</h4>
+							<!-- <em>{{contentSnippet}}</em> -->
+						</a> 
+						<!--{{#mediaGroups}}
+							 {{#contents}}
+								<img src="{{& url}}" />
+							{{/contents}} 
+						{{/mediaGroups}}-->
+						
+						
+					</li>
+					
+					{{/incaroussel}}
+
+					{{/entries}}
+				</script>
+				
+				
+				<div id="nav">
+					<center>
+						<div id="prev" data-role="button" data-icon="arrow-l" data-iconpos="notext" onclick="myScroll.scrollToPage('prev', 0);return false">&larr;</div>
+						<ul id="indicator" data-role="none">
+							<li class="active">1</li>
+							<li>2</li>
+							<li>3</li>
+							<li>4</li>
+							<li>5</li>
+							<li>6</li>
+							<li>7</li>
+						</ul>
+						<div id="next" data-role="button" data-icon="arrow-r" data-iconpos="notext" onclick="myScroll.scrollToPage('next', 0);return false">&rarr;</div>
+					</center>
+				</div>
+				
+				<!-- iscroll caroussel -->
+
+				<ul id="items" data-role="listview" data-split-icon="gear" data-split-theme="d"  data-inset="false"></ul>
+
+				<script id="items-tmpl" type="text/x-jquery-tmpl">
+					{{#entries}}
+					<li>
+					<a href="#i{{index}}" data-transition="slide">
+						{{#mediaGroups}}
+							{{#contents}}
+								<img src="{{& url}}" />
+							{{/contents}}
+						{{/mediaGroups}}
+					<h3>{{title}}</h3>
+					<p>{{contentSnippet}}</p>
+					</a></li>
+
+					{{/entries}}
+				</script>
+
+				<script id="itemsphp-tmpl" type="text/x-jquery-tmpl">
+
+					<li>
+					<a href="#{{guid}}" data-transition="turn">
+					<img src="{{enclosure}}" />
+					<h3>{{title}} <span class="ui-li-count">{{comments}}</span></h3>
+					<p>{{description}}</p>
+					</a></li>
+				</script>
+
+			</div><!-- /content -->
+
+			<div data-role="footer">
+				<h4>Rss4Mobile / <a href="#test"  data-transition="flip">test</a> / <a href="#" id="website" target="_blank"></a>  </h4>
+				
+			</div><!-- /footer -->
+
+		</div><!-- /page -->
+
+		<div id="pages"></div>
+
+		<script id="pages-tmpl" type="text/x-jquery-tmpl">
+			{{#entries}}
+				<div data-role="page" id="i{{index}}" class="pages" data-add-back-btn="true">
+					<div data-role="header">
+						
+						<h1>{{title}}</h1></div>
+					<div data-role="content">
+						{{{content}}}
+						
+						<br/><br/>
+						<a href="{{link}}" target="_blank">{{title}}</a>
+						
+					</div>
+				</div>
+			{{/entries}}
+		</script>
+		
+		
+		<div data-role="page" id="test" data-add-back-btn="true">
+			<div data-role="header">
+				
+				<h1>url de test</h1></div>
+			<div data-role="content">
+				
+				
+				<a data-ajax="false" data-role="button" href="?http://www.al-kanz.org/feed/rss/&caroussel=http://www.al-kanz.org/category/a-la-une/rss">Al-Kanz</a>
+				<a data-ajax="false" data-role="button" href="?http://www.theverge.com/rss/index.xml">TheVerge</a>
+				<a data-ajax="false" data-role="button" href="?http://www.bgr.com/feed/">BGR</a>
+				<a data-ajax="false" data-role="button" href="?http://feeds2.feedburner.com/Pressecitron" >Pressecitron</a>
+				<a data-ajax="false" data-role="button" href="?http://feeds.feedburner.com/Ikeahacker&caroussel=http://www.ikeahackers.net/feeds/posts/default/-/featured" >Ikeahacker</a>
+				
+				<a data-ajax="false" data-role="button" href="?http://www.apartmenttherapy.com/main/atom.xml">ApartmentTherapy</a>				
+				<a data-ajax="false" data-role="button" href="?http://feeds.feedburner.com/Minimalissimo">Minimalissimo</a>
+				
+				<a data-ajax="false" data-role="button" href="?http://feeds.feedburner.com/packfs">Futura-Sciences</a>
+				
+				
+			</div>
+		</div>
+		<script type="text/javascript" src="iscroll.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
