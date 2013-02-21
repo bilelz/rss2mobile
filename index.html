@@ -18,7 +18,9 @@
 		<div data-role="page" id="home">
 
 			<div data-role="header">
-				<h1>Rss4Mobile</h1>
+				<a href="#test"  data-transition="flip"  data-icon="gear" data-theme="c">Demo</a>
+				<h1>Rss4Mobile</h1> 
+				<a href="#" id="website" target="_blank" data-role="button" data-icon="forward" data-iconpos="right" data-theme="c"  class="ui-btn-right">#</a>
 			</div><!-- /header -->
 
 			<div data-role="content">
@@ -49,7 +51,7 @@
 						
 						
 						
-						<a href="#i{{index}}" data-transition="slide">
+						<a href="#{{index}}" data-transition="slide">
 							<h4>{{title}}</h4>
 							<!-- <em>{{contentSnippet}}</em> -->
 						</a> 
@@ -91,7 +93,7 @@
 				<script id="items-tmpl" type="text/x-jquery-tmpl">
 					{{#entries}}
 					<li>
-					<a href="#i{{index}}" data-transition="slide">
+					<a href="#{{index}}" data-transition="slide">
 						{{#mediaGroups}}
 							{{#contents}}
 								<img src="{{& url}}" />
@@ -117,7 +119,7 @@
 			</div><!-- /content -->
 
 			<div data-role="footer">
-				<h4>Rss4Mobile / <a href="#test"  data-transition="flip">test</a> / <a href="#" id="website" target="_blank"></a>  </h4>
+				<h4>Rss2Mobile</h4>
 				
 			</div><!-- /footer -->
 
@@ -127,7 +129,7 @@
 
 		<script id="pages-tmpl" type="text/x-jquery-tmpl">
 			{{#entries}}
-				<div data-role="page" id="i{{index}}" class="pages" data-add-back-btn="true">
+				<div data-role="page" id="{{index}}" class="pages" data-add-back-btn="true">
 					<div data-role="header">
 						
 						<h1>{{title}}</h1></div>
@@ -135,7 +137,7 @@
 						{{{content}}}
 						
 						<br/><br/>
-						<a href="{{link}}" target="_blank">{{title}}</a>
+						<a href="{{link}}" target="_blank" data-role="button" data-icon="forward" data-iconpos="right">{{link}}</a>
 						
 					</div>
 				</div>
@@ -150,7 +152,7 @@
 			<div data-role="content">
 				
 				
-				<a data-ajax="false" data-role="button" href="?http://www.al-kanz.org/feed/rss/&caroussel=http://www.al-kanz.org/category/a-la-une/rss">Al-Kanz</a>
+				<a data-ajax="false" data-role="button" href="?http://feeds.feedburner.com/bilelz">Bilelz (blog) </a>
 				<a data-ajax="false" data-role="button" href="?http://www.theverge.com/rss/index.xml">TheVerge</a>
 				<a data-ajax="false" data-role="button" href="?http://www.bgr.com/feed/">BGR</a>
 				<a data-ajax="false" data-role="button" href="?http://feeds2.feedburner.com/Pressecitron" >Pressecitron</a>
@@ -165,6 +167,6 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="iscroll.js"></script>
-		<script src="main.js"></script>
+		<script src="main.js?imgcar"></script>
 	</body>
 </html>
