@@ -107,55 +107,6 @@ $(document).ready(function() {
 			document.querySelector('#indicator > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';
 		}
 	 });
-
-
-	/*	 
-	 $.ajax({
-		type : "GET",
-		url : "rss.xml", // proxy.php
-		dataType : "xml",
-		success : function(xml) {
-			console.log(xml);
-
-			var tmpl = $("#itemsphp-tmpl").html(), html = "";
-			var pagestmpl = $("#pages-tmpl").html(), pageshtml = "";
-
-			$("#items, #pageshtml").empty();
-
-			$(xml).find('item').each(function(i) {
-				var $item = $(this);
-				var o_new = new Object();
-
-				o_new = {
-					title : $item.find('title').text(),
-					link : $item.find('link').text(),
-					pubDate : $item.find('pubDate').text(),
-					description : $item.find('description').text(),
-					content : $item.find('content').text(),
-					comments : $item.find('commentscount').text(),
-					enclosure : $item.find('enclosure').text().replace(/.jpg/ig,"-150x81.jpg").replace(/.png/ig,"-150x81.png"),
-					guid: "p" + $item.find('guid').text().replace("http://www.al-kanz.org/?p=","")
-				};
-
-				html += Mustache.render(tmpl, o_new);
-				pageshtml += Mustache.render(pagestmpl, o_new);
-
-			});
-
-			$('#items').html("").append(html).listview('refresh');
-			//$('#pages').html("").append(pageshtml);
-			$('body').append(pageshtml);
-			
-			$('.pages').page();			
-			
-		},
-		error : function(data) {
-			console.log(data);
-		}
-	});
-	
-	*/
-
 });
 
 
